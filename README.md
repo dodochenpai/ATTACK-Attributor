@@ -1,7 +1,7 @@
 # ATTACK-Attributor
 A Python command-line tool used to attribute a set of TTPs to APT groups. Takes in a Mitre ATTACK Navigator json file, and prints out the top 10 most similar APT groups.
 
-#Usage
+# Usage
 ```
 > .\groupmapper.py G1002-enterprise-layer.json
 G1002 1.0
