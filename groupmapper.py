@@ -1,5 +1,5 @@
 import json
-import csv
+import sys
 
 groups = {}
 
@@ -20,8 +20,8 @@ def groupmapper():
     with open('groupmappings.json','w') as f:
         f.write(json.dumps(groups, indent=4))
 
-def attributor():
-    with open('layer.json','r') as f:
+def attributor(inputfile):
+    with open(inputfile,'r') as f:
         with open('groupmappings.json','r') as k:
             count = {}
             apts = json.load(k)
@@ -42,4 +42,5 @@ def attributor():
     for group in top:
         print(group, count[group]/numtechniques)
 
-attributor()
+inputfile = sys.argv[1]
+attributor(inputfile)
