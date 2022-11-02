@@ -3,15 +3,16 @@ A Python command-line tool used to attribute a set of TTPs to APT groups. Takes 
 
 # Usage
 ```
-> .\groupmapper.py G1002-enterprise-layer.json
-G1002 1.0
-G0016 0.875
-G0050 0.75
-G0032 0.6875
-G0007 0.625
-G0094 0.625
-G0080 0.625
-G0047 0.5625
-G0129 0.5625
-G0092 0.5625
+> .\groupmapper.py .\G1002-enterprise-layer.json
+APT   | Match
+G1002 | 100.0 %
+G0016 | 87.5 %
+G0050 | 75.0 %
+G0032 | 68.75 %
+G0007 | 62.5 %
+G0094 | 62.5 %
+G0080 | 62.5 %
+G0047 | 56.25 %
+G0129 | 56.25 %
+G0092 | 56.25 %
 ```
