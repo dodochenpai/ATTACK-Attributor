@@ -21,24 +21,25 @@ def groupmapper():
         f.write(json.dumps(groups, indent=4))
 
 def attributor():
-    with open('G0010-enterprise-layer.json','r') as f:
+    with open('layer.json','r') as f:
         with open('groupmappings.json','r') as k:
             count = {}
             apts = json.load(k)
             target = json.load(f)
-            numtechniques = len(target['techniques'])
-            print(numtechniques)
+            numtechniques = 0
             for technique in target['techniques']:
-                try:
-                    for group in apts[technique['techniqueID']]:
-                        if group not in count:
-                            count[group] = 1
-                        else:
-                            count[group] += 1
-                except:
-                    continue
+                if 'score' in technique:
+                    numtechniques+=1
+                    try:
+                        for group in apts[technique['techniqueID']]:
+                            if group not in count:
+                                count[group] = 1
+                            else:
+                                count[group] += 1
+                    except:
+                        continue
     top = sorted(count, key=count.get, reverse=True)[0:10]
     for group in top:
-        print(group, count[group])
+        print(group, count[group]/numtechniques)
 
 attributor()
