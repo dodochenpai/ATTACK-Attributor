@@ -39,8 +39,9 @@ def attributor(inputfile):
                     except:
                         continue
     top = sorted(count, key=count.get, reverse=True)[0:10]
+    print("APT   | Match")
     for group in top:
-        print(group, count[group]/numtechniques)
+        print(group,'|',100*count[group]/numtechniques,'%')
 
 inputfile = sys.argv[1]
 attributor(inputfile)
